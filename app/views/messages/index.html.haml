@@ -3,14 +3,14 @@
   .side__header
     .side__header__name
       user-name
-    =link_to "http://www.gfc-ob.jp/", class: "side__header__edit" do
+    =link_to "", class: "side__header__edit" do
       =fa_icon "cog"
-    =link_to "http://www.gfc-ob.jp/", class: "side__header__new" do
+    =link_to "", class: "side__header__new" do
       =fa_icon "edit"
   .side__groups
-    .side__group
-      .side__groups__group__title
-      .side__groups__group__last-message
+    .side__groups__group
+      %p.side__groups__group__title<>title
+      %p.side__groups__group__last-message<>last-message
 .chat
   .chat__info
     .chat__info__title

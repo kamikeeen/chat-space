@@ -10,18 +10,36 @@
       display: inline-block;
       line-height: 100px;
       padding-left: 20px;
-      float: left;
-    }&__edit{
+      float: left;   
+    }
+    &__edit{
       float: right;
       display: inline-block;
       line-height: 100px;
       color: #FFFFFF;
       padding: 0 20px 0 5px;
-    }&__new{
+    }
+    &__new{
       float: right;
       display: inline-block;
       line-height: 100px;
       color: #FFFFFF;
+    }
+  }
+  &__groups{
+    background-color: #2f3e51;
+    overflow: scroll;
+    padding: 20px 20px 0 20px;
+    height: calc(100vh - 100px);
+    &__group{
+      height: 91px;
+      &__title{
+        font-size: 15px;
+      }
+      &__last-message{
+        font-size: 11px;
+        padding: 5px 0 40px;
+      }
     }
   }
 }
