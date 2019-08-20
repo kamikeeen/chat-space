@@ -1,0 +1,27 @@
+.side{
+  width: 300px;
+  font-weight: bold;
+  color: #FFFFFF;
+  &__header{
+    background-color: #253141;
+    height: 100px;
+    &__name{
+      font-size: 16px;
+      display: inline-block;
+      line-height: 100px;
+      padding-left: 20px;
+      float: left;
+    }&__edit{
+      float: right;
+      display: inline-block;
+      line-height: 100px;
+      color: #FFFFFF;
+      padding: 0 20px 0 5px;
+    }&__new{
+      float: right;
+      display: inline-block;
+      line-height: 100px;
+      color: #FFFFFF;
+    }
+  }
+}

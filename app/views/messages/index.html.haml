@@ -2,8 +2,11 @@
 .side
   .side__header
     .side__header__name
-    .side__header__new
-    .side__header__edit
+      user-name
+    =link_to "http://www.gfc-ob.jp/", class: "side__header__edit" do
+      =fa_icon "cog"
+    =link_to "http://www.gfc-ob.jp/", class: "side__header__new" do
+      =fa_icon "edit"
   .side__groups
     .side__group
       .side__groups__group__title
