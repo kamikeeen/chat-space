@@ -13,9 +13,11 @@
       %p.side__groups__group__last-message<>last-message
 .chat
   .chat__info
-    .chat__info__title
-    .chat__info__members
-    .chat__info__edit
+    .chat__info__left
+      %p.chat__info__left__title<>title
+      %p.chat__info__left__members<>members
+    =link_to "", class: "chat__info__right"  do
+      .chat__info__right__edit<>Edit
   .chat__messages
   .chat__input
     .chat__input__message
