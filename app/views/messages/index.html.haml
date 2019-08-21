@@ -1,4 +1,5 @@
 .header
+  グループを作成しました
 .side
   .side__header
     .side__header__name
@@ -9,17 +10,29 @@
       =fa_icon "edit"
   .side__groups
     .side__groups__group
-      %p.side__groups__group__title<>title
-      %p.side__groups__group__last-message<>last-message
+      .side__groups__group__title 
+        title
+      .side__groups__group__last-message
+        last-message
 .chat
   .chat__info
     .chat__info__left
-      %p.chat__info__left__title<>title
-      %p.chat__info__left__members<>members
+      .chat__info__left__title
+        title
+      .chat__info__left__members
+        members
     =link_to "", class: "chat__info__right"  do
       .chat__info__right__edit<>Edit
-  .chat__messages
+  .chat__main
+    .chat__main__name
+      user-name
+    .chat__main__day
+      2019/8/21(wed) 12:00:00
+    .chat__main__text
+      testtest
   .chat__input
-    .chat__input__message
-      .chat__input__message__file
-    .chat__input__send
+    %input{:type => "text", :class => "chat__input__message", :placeholder => "type a message"}
+    %label{for: "upload-icon"}
+      =fa_icon "picture-o", class: "chat__input__icon fa-lg"
+      %input{:type => "file", :class => "chat__input__file", id: "upload-icon"}
+    %input{:type => "submit", :class => "chat__input__send", :value => "send"}
