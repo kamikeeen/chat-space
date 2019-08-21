@@ -3,8 +3,8 @@
 .side
   .side__header
     .side__header__name
-      user-name
-    =link_to "", class: "side__header__edit" do
+      = current_user.name
+    =link_to edit_user_path(current_user), class: "side__header__edit" do
       =fa_icon "cog"
     =link_to "", class: "side__header__new" do
       =fa_icon "edit"
