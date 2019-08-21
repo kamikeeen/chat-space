@@ -31,8 +31,8 @@
     .chat__main__text
       testtest
   .chat__input
-    %input{:type => "text", :class => "chat__input__message", :placeholder => "type a message"}
+    %input{type: "text", class: "chat__input__message", placeholder: "type a message"}
     %label{for: "upload-icon"}
       =fa_icon "picture-o", class: "chat__input__icon fa-lg"
-      %input{:type => "file", :class => "chat__input__file", id: "upload-icon"}
-    %input{:type => "submit", :class => "chat__input__send", :value => "send"}
+      %input{type: "file", class: "chat__input__file", id: "upload-icon"}
+    %input{type: "submit", class: "chat__input__send", value: "send"}
