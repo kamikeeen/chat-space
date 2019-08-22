@@ -1,11 +1,11 @@
 .side{
   width: 300px;
-  font-weight: bold;
   color: $white-font;
   float: left;
   &__header{
     background-color: #253141;
     height: 100px;
+    font-weight: bold;
     &__name{
       font-size: 16px;
       display: inline-block;
@@ -34,12 +34,15 @@
     height: calc(100vh - 120px);
     &__group{
       height: 91px;
+      text-decoration: none;
       &__title{
         font-size: 15px;
+        color: $white-font;
       }
       &__last-message{
         font-size: 11px;
         padding: 5px 0 40px;
+        color: $white-font;
       }
     }
   }
