@@ -1,25 +1,15 @@
-.side
-  .side__header
-    .side__header__name
-      = current_user.name
-    =link_to edit_user_path(current_user), class: "side__header__edit" do
-      =fa_icon "cog"
-    =link_to "", class: "side__header__new" do
-      =fa_icon "edit"
-  .side__groups
-    .side__groups__group
-      .side__groups__group__title 
-        title
-      .side__groups__group__last-message
-        last-message
+= render partial: "groups/side_bar", locals: {groups: @groups}
 .chat
   .chat__info
     .chat__info__left
       .chat__info__left__title
-        title
+        = @group.name
       .chat__info__left__members
-        members
-    =link_to "", class: "chat__info__right"  do
+        Member:
+        - @users.each do |user|
+          %li.chat__info__left__members__user
+            = user[:name]
+    =link_to edit_group_path(params[:group_id]), class: "chat__info__right"  do
       .chat__info__right__edit<>Edit
   .chat__main
     .chat__main__name
