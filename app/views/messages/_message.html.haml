@@ -1,0 +1,8 @@
+.chat__main__name 
+  = message.user.name
+.chat__main__day
+  = message.created_at.strftime("%Y/%m/%d (%a) %H:%M:%S")
+.chat__main__text
+  = message.body
+.chat__main__image
+  = image_tag message.image
