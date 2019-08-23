@@ -1,3 +1,7 @@
+.notification{
+  position: fixed;
+  width: 100%;
+}
 .side{
   width: 300px;
   color: $white-font;
@@ -58,6 +62,7 @@
     padding: 0 40px 0;
     display: flex;
     overflow: scroll;
+    box-sizing: border-box;
     &__left{
       &__title{
         font-size: 20px;
@@ -109,35 +114,41 @@
       font-size: 14px;
       color: $light-font;
     }
+    &__image{
+      padding-bottom: 40px;
+    }
   }
-  &__input{
-    height: 50px;
+  &__form{
+    height: 90px;
     background-color: #ddd;
-    display: flex;
     padding: 20px 40px;
-    position: relative;
-    &__message{
-      height: 50px;
-      color: $light-font;
-      padding: 0 50px 0 10px;
-      width: 100%;
-      border-style: none;
-    }
-    &__icon{
-      cursor: pointer;
-      position: absolute;
-      top: 40px;
-      right: 180px;
-    }
-    &__file{
-      display: none;
-    }
-    &__send{
-      background-color: $btn;
-      color: $white-font;
-      margin-left: 25px;
-      padding: 0 30px;
-      cursor: pointer;
+    box-sizing: border-box;
+    &__box{
+      display: flex;
+      position: relative;
+      &__message{
+        height: 50px;
+        width: 100%;
+        padding: 0 50px 0 10px;
+        border-style: none;
+      }
+      &__input{
+        position: absolute;
+        right: 150px;
+        top: 15px;
+        &__image{
+        cursor: pointer;
+        }
+        &__file{
+          display: none;
+        }
+      }
+      &__send{
+        background-color: $btn;
+        color: $white-font;
+        padding: 0 30px;
+        margin-left: 25px;
+      }
     }
   }
 }

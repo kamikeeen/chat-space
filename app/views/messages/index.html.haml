@@ -12,15 +12,12 @@
     =link_to edit_group_path(params[:group_id]), class: "chat__info__right"  do
       .chat__info__right__edit<>Edit
   .chat__main
-    .chat__main__name
-      user-name
-    .chat__main__day
-      2019/8/21(wed) 12:00:00
-    .chat__main__text
-      testtest
-  .chat__input
-    %input{type: "text", class: "chat__input__message", placeholder: "type a message"}
-    %label{for: "upload-icon"}
-      =fa_icon "picture-o", class: "chat__input__icon fa-lg"
-      %input{type: "file", class: "chat__input__file", id: "upload-icon"}
-    %input{type: "submit", class: "chat__input__send", value: "send"}
+    = render @messages
+  .chat__form
+    =form_for [@group, @message], html:{class: "chat__form__box"} do |f|
+      =f.text_field :body, class: 'chat__form__box__message', placeholder: 'type a message'
+      .chat__form__box__input
+        = f.label :image, class: 'chat__form__box__input__image' do
+          =fa_icon "picture-o", class: "chat____form__box__input__icon fa-lg"
+          = f.file_field :image, class: 'chat__form__box__input__file'
+      = f.submit 'Send', class: 'chat__form__box__send'
