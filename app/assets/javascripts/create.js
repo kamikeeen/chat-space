@@ -35,10 +35,9 @@ $(function(){
     .done(function(message){
       var html = appendMessage(message);
       $(".chat__main").append(html);
-      $("#message_body").val("");
-      $("#message_image").val("");
-      $("input[type='submit']").attr("disabled", false);
       $(".chat__main").animate({scrollTop: $(".chat__main")[0].scrollHeight}, 'slow');
+      $("input[type='submit']").attr("disabled", false);
+      $("#new_message")[0].reset();
     })
     .fail(function(){
       alert("oh my god");
