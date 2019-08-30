@@ -1,12 +1,8 @@
 $(function(){
 
   function appendMessage(message){
-    if (message.image){
-      var image = `<img src=${message.image}></img>`
-    }else{
-      var image = ""
-    }
-
+    var image = (message.image) ? `<img src=${message.image}></img>` : "";
+    
     var html = `<div class="chat__main__name">
                   ${message.user_name}
                 </div>
