@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = User.all
+    responed_to do |format|
+      format.html
+      format.json
+    end
+  end
   def edit
   end
 
