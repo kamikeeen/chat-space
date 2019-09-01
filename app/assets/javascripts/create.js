@@ -40,7 +40,7 @@ $(function(){
       $("#new_message")[0].reset();
     })
     .fail(function(){
-      alert("oh my god");
+      alert("メッセージの送信に失敗しました");
       $("input[type='submit']").attr("disabled", false);
     })
   })
