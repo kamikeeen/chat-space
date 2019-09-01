@@ -44,13 +44,13 @@ $(function(){
   })
 
   $("#user-search-result").on("click", ".user-search-add", function(){
-    var data = { user_id: $(this).attr("data-user-id"), user_name: $(this).attr("data-user-name") };
+    var data = { user_id: $(this).data("user-id"), user_name: $(this).data("user-name") };
     $(this).parent().remove();
     appendUserGroup(data)
   })
 
   $(".js-add-user").on("click", ".js-remove-btn", function(){
-    var data = { user_id: $(this).attr("data-user-id"), user_name: $(this).attr("data-user-name") };
+    var data = { user_id: $(this).data("user-id"), user_name: $(this).data("user-name") };
     $(this).parent().remove();
     appendUserResult(data)
   })

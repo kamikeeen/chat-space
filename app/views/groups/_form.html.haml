@@ -13,25 +13,25 @@
   -# .chat-group-form__field
   .chat-group-form__field.crearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "chat_group_チャットメンバー"}チャットメンバーを追加
+      %label.chat-group-form__label{for: "chat_group_チャットメンバー"}チャットメンバーを追加
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        %input.chat-group-form__input{:id => "user-search-field", :placeholder => "追加したいユーザー名を入力してください", :type => "text"}
+        %input.chat-group-form__input{id: "user-search-field", placeholder: "追加したいユーザー名を入力してください", type: "text"}
       / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
       / この部分はインクリメンタルサーチ(ユーザー追加の非同期化)のときにも使用します
       #user-search-result
 
   .chat-group-form__field.crearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "chat_group_チャットメンバー"}チャットメンバー
+      %label.chat-group-form__label{for: "chat_group_チャットメンバー"}チャットメンバー
     .chat-group-form__field--right
       .chat-group-users.js-add-user
         - group.users.each do |user|
-          .chat-group-user.clearfix.js-chat-member{:id => "chat-group-user-#{user.id}"}
-            %input{:name => "group[user_ids][]", :type => "hidden", :value => "#{user.id}"}
+          .chat-group-user.clearfix.js-chat-member{id: "chat-group-user-#{user.id}"}
+            %input{name: "group[user_ids][]", type: "hidden", value: "#{user.id}"}
             %p.chat-group-user__name
               = user.name
-            %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn{ :id => user.id, "data-user-id" => user.id, "data-user-name" => user.name}
+            %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn{id: user.id, data: {user: {id: user.id, name: user.name}}}
               削除
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
