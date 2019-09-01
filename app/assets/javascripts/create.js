@@ -9,7 +9,7 @@ $(function(){
                 <div class="chat__main__day">
                   ${message.date}
                 </div>
-                <div class="chat__main__text">
+                <div class="chat__main__text" data-message-id="${message.id}">
                   ${message.body}
                 </div>
                 <div class="chat__main__image">
