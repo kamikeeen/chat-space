@@ -1,10 +1,11 @@
 $(function(){
 
   function appendUserResult(data){
-    var html = `<div class="chat-group-user clearfix">
+    var html = `<div class="chat-group-user clearfix js-chat-member">
                   <p class="chat-group-user__name">${data.user_name}</p>
                   <a id="user${data.user_id}" class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${data.user_id}" data-user-name="${data.user_name}">追加</a>
                 </div>`
+
     $("#user-search-result").append(html);
   }
 
@@ -14,6 +15,7 @@ $(function(){
                   <p class="chat-group-user__name">${data.user_name}</p>
                   <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${data.user_id}" data-user-name="${data.user_name}">削除</a>
                 </div>`
+
     $(".chat-group-users.js-add-user").append(html);
   }
 
