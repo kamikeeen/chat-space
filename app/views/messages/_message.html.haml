@@ -2,7 +2,7 @@
   = message.user.name
 .chat__main__day
   = message.created_at.strftime("%Y/%m/%d (%a) %H:%M:%S")
-.chat__main__text
+.chat__main__text{data: {message: {id: message.id}}}
   = message.body
 .chat__main__image
   = image_tag message.image
