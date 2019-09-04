@@ -8,8 +8,8 @@
       =fa_icon "edit"
   .side__groups
     - current_user.groups.each do |group|
-      = link_to group_messages_path(group), class: "side__groups__group" do
+      = link_to group_messages_path(group), class: "side__groups__group", data: {id: group.id} do
         %p.side__groups__group__title 
           = group.name
-        %p.side__groups__group__last-message
-          = group.show_last_message
+        %p.side__groups__group__last-message{data: {group: {id: group.id}}}
+          = group.show_last_message.truncate(30)

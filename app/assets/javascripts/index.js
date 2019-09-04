@@ -30,11 +30,17 @@ $(function(){
         dataType: "json"
       })
       .done(function(users){
+        var hairetu = [];
+        $(`input[name="group[user_ids][]"]`).each(function(i, ele){
+          hairetu.push(Number($(ele).val()));
+        })
         if (users.length !== 0){
           users.forEach(function(user){
-            var data = { user_id: user.id, user_name: user.name };
-            appendUserResult(data);
-            })
+            if (!hairetu.includes(user.id)){
+              var data = { user_id: user.id, user_name: user.name };
+              appendUserResult(data);
+            }
+          })
         }
       })
       .fail(function(){

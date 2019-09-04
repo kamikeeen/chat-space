@@ -3,5 +3,6 @@ json.array! @messages do |message|
   json.image message.image.url
   json.date message.created_at
   json.user_name message.user.name
-  json.id message.id
+  json.id message.id 
+  json.group_id message.group_id
 end
