@@ -61,7 +61,11 @@ $(function(){
 
   var reloadMessages = function(){  
     var last_message_id = $(".chat__main__text:last").attr("data-message-id");
-    $.ajax({
+    if (jqxhr){
+      return;
+    }
+
+    jqxhr = $.ajax({
       url: "api/messages",
       type: "GET",
       data: { id: last_message_id },
@@ -84,6 +88,6 @@ $(function(){
     })
   }
 
-  setInterval(reloadMessages, 5000);
+  var jqxhr;setInterval(reloadMessages, 5000);
 });
 
