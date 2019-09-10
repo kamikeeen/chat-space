@@ -1,5 +1,4 @@
 $(function(){
-
   function appendUserResult(data){
     var html = `<div class="chat-group-user clearfix js-chat-member">
                   <p class="chat-group-user__name">${data.user_name}</p>
@@ -17,6 +16,14 @@ $(function(){
                 </div>`
 
     $(".chat-group-users.js-add-user").append(html);
+  }
+
+  function appendMsg(msg){
+    var html = `<div class="chat-group-user clearfix js-chat-member">
+                  <p class="chat-group-user__name">${msg}</p>
+                </div>`
+    
+    $("#user-search-result").append(html);
   }
 
   $("#user-search-field").on("keyup", function(){
@@ -41,6 +48,8 @@ $(function(){
               appendUserResult(data);
             }
           })
+        }else{
+          appendMsg("検索に一致するユーザーは存在しません");
         }
       })
       .fail(function(){
