@@ -73,13 +73,13 @@ $(function(){
     })
     .done(function(messages){
       messages.forEach(function(message) {
-        var html = "";
-        html = appendMessage(message);
+        var html = appendMessage(message);
         $(".chat__main").append(html);
-        var last_message_html = "";
-        last_message_html = appendLastMessage(message);
+
+        var last_message_html = appendLastMessage(message);
         $(`p[data-group-id=${message.group_id}]`).remove();
         $(`a[data-id=${message.group_id}]`).append(last_message_html);
+        
         $(".chat__main").animate({scrollTop: $(".chat__main")[0].scrollHeight}, 'slow');
       });
     })
